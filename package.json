@@ -1,0 +1,14 @@
+{
+  "name": "k-script",
+  "version": "1.0.1",
+  "description": "Non-recurive, one-file version of @fraczak/k",
+  "main": "index.js",
+  "scripts": {
+    "build": "jison index.jison"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jison": "^0.4.18"
+  }
+}
