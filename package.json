@@ -4,11 +4,13 @@
   "description": "Non-recurive, one-file version of @fraczak/k",
   "main": "index.js",
   "scripts": {
-    "build": "jison index.jison"
+    "build": "jiwson index.jison",
+    "build-mjs": "jiwson -m es6 index.jison -o index.mjs",
+    "build-all": "npm run build; npm run build-mjs" 
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jison": "^0.4.18"
+    "jiwson": "^0.1.1"
   }
 }

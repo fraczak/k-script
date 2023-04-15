@@ -25,13 +25,6 @@ function builtin(fnName, arg) {
     case "TIMES":
       if (!Array.isArray(arg)) return; 
       return valid(arg.reduce((res, x) => res * x), 1);
-    case "MINUS": {
-      if ('number' === typeof arg) return valid(- arg);
-      if (!Array.isArray(arg)) return; 
-      const [res,...args] = arg;
-      if (args.length === 0) return valid (- res);
-      return valid(args.reduce((res, x) => res - x), res);
-    }
     case "DIV": {
       if (!Array.isArray(arg)) return; 
       if (arg.length !== 2)
@@ -70,7 +63,9 @@ function builtin(fnName, arg) {
     case "SNOC": {
       if (!Array.isArray(arg)) return; 
       return (arg.length > 1) ? [arg[0],arg.slice(1)] : undefined;
-    } 
+    }
+    case "toDateMsec": return new Date(arg).getTime();
+    case "toDateStr": return new Date(arg).toISOString();
   }
 }
 
